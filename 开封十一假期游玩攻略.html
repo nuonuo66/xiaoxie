@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开封十一假期游玩攻略 - 古都开封深度游</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #8B4513;
+        }
+
+        .section h2 {
+            color: #8B4513;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day-plan {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #28a745;
+        }
+
+        .day-plan h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .attraction {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .attraction:hover {
+            transform: translateY(-2px);
+        }
+
+        .attraction h4 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .attraction-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .food-item {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            color: #495057;
+        }
+
+        .food-item h4 {
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+
+        .tips {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .tips h3 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips li {
+            background: rgba(255, 255, 255, 0.7);
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+        }
+
+        .icon {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .attraction-info,
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏮 开封十一假期游玩攻略</h1>
+            <p>古都开封深度游 - 三日精华路线</p>
+        </div>
+
+        <div class="content">
+            <!-- 第一天 -->
+            <div class="section">
+                <h2><span class="icon">🌅</span>第一天：历史文化之旅</h2>
+                
+                <div class="day-plan">
+                    <h3>上午：清明上河园</h3>
+                    <div class="attraction">
+                        <h4>清明上河园</h4>
+                        <p>以北宋画家张择端的《清明上河图》为蓝本，重现北宋汴京繁华景象的大型主题公园。园内有丰富的表演，如《大宋·东京梦华》实景演出。</p>
+                        <div class="attraction-info">
+                            <div class="info-item">
+                                <div class="info-label">⏰ 开放时间：</div>
+                                8:00-18:30
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💰 门票：</div>
+                                成人票120元
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🚌 交通：</div>
+                                1路、15路、20路、30路、38路、39路公交
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">⏱️ 建议游览：</div>
+                                3-4小时
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-plan">
+                    <h3>下午：龙亭公园</h3>
+                    <div class="attraction">
+                        <h4>龙亭公园</h4>
+                        <p>位于开封市中心，是北宋皇宫遗址所在地。园内有龙亭大殿、御河等景点，秋季菊花展尤为著名。</p>
+                        <div class="attraction-info">
+                            <div class="info-item">
+                                <div class="info-label">⏰ 开放时间：</div>
+                                8:00-18:00
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💰 门票：</div>
+                                成人票60元
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🚶 交通：</div>
+                                从清明上河园步行15分钟
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">⏱️ 建议游览：</div>
+                                1-2小时
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-plan">
+                    <h3>晚上：鼓楼夜市</h3>
+                    <div class="attraction">
+                        <h4>鼓楼夜市</h4>
+                        <p>开封著名的美食街区，汇集了各种当地特色小吃。这里是体验开封夜生活的最佳去处。</p>
+                        <div class="food-grid">
+                            <div class="food-item">
+                                <h4>🥟 灌汤包</h4>
+                                <p>皮薄馅多，汤汁鲜美，开封最著名的小吃之一</p>
+                            </div>
+                            <div class="food-item">
+                                <h4>🍖 羊肉炕馍</h4>
+                                <p>外酥里嫩，味道浓郁，配菜丰富</p>
+                            </div>
+                            <div class="food-item">
+                                <h4>🥜 花生糕</h4>
+                                <p>传统糕点，口感酥脆，花生香浓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二天 -->
+            <div class="section">
+                <h2><span class="icon">🏛️</span>第二天：文化与宗教之旅</h2>
+                
+                <div class="day-plan">
+                    <h3>上午：开封府</h3>
+                    <div class="attraction">
+                        <h4>开封府</h4>
+                        <p>北宋时期的最高司法机关，包拯曾在此任职。可以了解古代司法制度和包青天的故事。</p>
+                        <div class="attraction-info">
+                            <div class="info-item">
+                                <div class="info-label">⏰ 开放时间：</div>
+                                8:00-18:00
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💰 门票：</div>
+                                成人票60元
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🚌 交通：</div>
+                                1路、15路、20路、30路、38路、39路公交
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">⏱️ 建议游览：</div>
+                                2小时
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-plan">
+                    <h3>下午：大相国寺</h3>
+                    <div class="attraction">
+                        <h4>大相国寺</h4>
+                        <p>始建于北齐天保六年（555年），是中国著名的佛教寺院之一。寺内有众多珍贵文物，如千手千眼观音像。</p>
+                        <div class="attraction-info">
+                            <div class="info-item">
+                                <div class="info-label">⏰ 开放时间：</div>
+                                8:00-17:30
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💰 门票：</div>
+                                成人票20元
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🚶 交通：</div>
+                                从开封府步行15分钟
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">⏱️ 建议游览：</div>
+                                1小时
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-plan">
+                    <h3>晚上：书店街</h3>
+                    <div class="attraction">
+                        <h4>书店街</h4>
+                        <p>开封另一条著名的美食街，汇集了众多特色小吃和餐馆。这里不仅有美食，还有各种文化用品。</p>
+                        <div class="food-grid">
+                            <div class="food-item">
+                                <h4>🍜 四味菜</h4>
+                                <p>李记四味菜馆的招牌菜，味道正宗</p>
+                            </div>
+                            <div class="food-item">
+                                <h4>🍰 百香林西点</h4>
+                                <p>各式糕点，甜而不腻</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三天 -->
+            <div class="section">
+                <h2><span class="icon">🗼</span>第三天：自然与人文之旅</h2>
+                
+                <div class="day-plan">
+                    <h3>上午：铁塔公园</h3>
+                    <div class="attraction">
+                        <h4>铁塔公园</h4>
+                        <p>铁塔始建于北宋皇祐元年（1049年），因通体采用褐色琉璃砖砌成，色泽似铁而得名。塔内可攀登，俯瞰开封市区景色。</p>
+                        <div class="attraction-info">
+                            <div class="info-item">
+                                <div class="info-label">⏰ 开放时间：</div>
+                                8:00-18:00
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💰 门票：</div>
+                                成人票40元
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🚌 交通：</div>
+                                1路、15路、20路、30路、38路、39路公交
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">⏱️ 建议游览：</div>
+                                1-2小时
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-plan">
+                    <h3>下午：山陕甘会馆</h3>
+                    <div class="attraction">
+                        <h4>山陕甘会馆</h4>
+                        <p>建于清乾隆四十一年（1776年），以精美的木雕、石雕、砖雕著称。是了解古代商业文化的好去处。</p>
+                        <div class="attraction-info">
+                            <div class="info-item">
+                                <div class="info-label">⏰ 开放时间：</div>
+                                8:00-18:00
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💰 门票：</div>
+                                成人票30元
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🚗 交通：</div>
+                                从铁塔公园打车15分钟
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">⏱️ 建议游览：</div>
+                                1小时
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-plan">
+                    <h3>晚上：宋都御街</h3>
+                    <div class="attraction">
+                        <h4>宋都御街</h4>
+                        <p>仿照北宋东京汴梁的街市风貌修建的步行街，集购物、美食、娱乐于一体。是购买纪念品的好地方。</p>
+                        <div class="food-grid">
+                            <div class="food-item">
+                                <h4>🐔 桶子鸡</h4>
+                                <p>开封特色美食，肉质鲜嫩</p>
+                            </div>
+                            <div class="food-item">
+                                <h4>🎨 汴绣</h4>
+                                <p>精美的传统手工艺品</p>
+                            </div>
+                            <div class="food-item">
+                                <h4>🎭 木版年画</h4>
+                                <p>传统民间艺术，适合收藏</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实用信息 -->
+            <div class="section">
+                <h2><span class="icon">ℹ️</span>实用信息</h2>
+                
+                <div class="tips">
+                    <h3>🚌 交通建议</h3>
+                    <ul>
+                        <li><strong>市内交通：</strong>开封市内公交线路较为完善，主要景点之间有直达公交车</li>
+                        <li><strong>出租车：</strong>起步价8元，适合短途出行</li>
+                        <li><strong>共享单车：</strong>市区内有多家共享单车运营商，适合短距离游览</li>
+                    </ul>
+                </div>
+
+                <div class="tips">
+                    <h3>🏨 住宿推荐</h3>
+                    <ul>
+                        <li><strong>开封中州国际饭店：</strong>位于市中心，交通便利，设施齐全</li>
+                        <li><strong>开封清明上河园主题酒店：</strong>紧邻清明上河园，主题房间设计独特</li>
+                        <li><strong>开封鼓楼青年旅舍：</strong>位于鼓楼附近，价格实惠，适合背包客</li>
+                    </ul>
+                </div>
+
+                <div class="tips">
+                    <h3>⚠️ 温馨提示</h3>
+                    <ul>
+                        <li><strong>天气：</strong>十一假期期间，开封气温适中，适合出游，但需注意早晚温差</li>
+                        <li><strong>住宿：</strong>建议提前预订酒店，选择靠近景点的住宿</li>
+                        <li><strong>门票：</strong>部分景点可提前在网上购票，避免排队</li>
+                        <li><strong>防疫：</strong>出行前请关注当地防疫政策，遵守相关规定</li>
+                        <li><strong>菊花展：</strong>十一期间正值开封菊花展，龙亭公园是观赏菊花的最佳地点</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
