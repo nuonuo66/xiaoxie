@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京咖啡馆推荐 - 海淀区汇众大厦 & 亦庄经海路</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .location-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .location-info h2 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .locations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .location-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #8B4513;
+        }
+
+        .cafes-section {
+            padding: 40px;
+        }
+
+        .cafes-section h2 {
+            color: #495057;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .cafes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .cafe-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .cafe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .cafe-header {
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .cafe-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .cafe-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2em;
+        }
+
+        .rating-text {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .cafe-content {
+            padding: 25px;
+        }
+
+        .cafe-info {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-value {
+            color: #6c757d;
+            margin-left: 20px;
+        }
+
+        .cafe-address {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #495057;
+        }
+
+        .cafe-advantages {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .advantages-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .best-choice {
+            border: 3px solid #fdcb6e;
+            position: relative;
+        }
+
+        .best-choice::before {
+            content: "🌟 最佳推荐";
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #fdcb6e;
+            color: #2d3436;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .traffic-section {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .traffic-section h3 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .traffic-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .traffic-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .locations,
+            .traffic-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .cafes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☕ 北京咖啡馆推荐</h1>
+            <p>海淀区汇众大厦 & 亦庄经海路地铁站 中间位置精选</p>
+        </div>
+
+        <div class="location-info">
+            <h2>📍 位置信息</h2>
+            <div class="locations">
+                <div class="location-card">
+                    <h3>🏢 您的工作地点</h3>
+                    <p><strong>海淀区汇众大厦</strong></p>
+                    <p>坐标: 116.307639, 40.046898</p>
+                </div>
+                <div class="location-card">
+                    <h3>🚇 朋友的位置</h3>
+                    <p><strong>亦庄经海路地铁站</strong></p>
+                    <p>坐标: 116.555078, 39.793731</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cafes-section">
+            <h2>🍰 精选咖啡馆推荐</h2>
+            <div class="cafes-grid">
+                <!-- 最佳推荐 -->
+                <div class="cafe-card best-choice">
+                    <div class="cafe-header">
+                        <div class="cafe-name">星巴克咖啡(弯里中心店)</div>
+                        <div class="cafe-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.6分</span>
+                        </div>
+                    </div>
+                    <div class="cafe-content">
+                        <div class="price-tag">💰 人均 40元</div>
+                        <div class="cafe-address">
+                            📍 南磨房乡华侨城·北京弯里中心1层N1-F1-07单元
+                        </div>
+                        <div class="cafe-info">
+                            <div class="info-label">
+                                <span class="icon">🕐</span>营业时间
+                            </div>
+                            <div class="info-value">周一至周日 07:00-21:00</div>
+                        </div>
+                        <div class="cafe-advantages">
+                            <div class="advantages-title">✨ 推荐理由</div>
+                            <p>• 位置相对居中，对双方都比较方便</p>
+                            <p>• 华侨城弯里中心有大型停车场，停车便利</p>
+                            <p>• 品牌连锁，环境和服务有保障</p>
+                            <p>• 营业时间长，时间安排灵活</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 其他推荐 -->
+                <div class="cafe-card">
+                    <div class="cafe-header">
+                        <div class="cafe-name">LUMEN CAFE·DIVINEASEL(祉画廊店)</div>
+                        <div class="cafe-rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.3分</span>
+                        </div>
+                    </div>
+                    <div class="cafe-content">
+                        <div class="price-tag">💰 人均 38元</div>
+                        <div class="cafe-address">
+                            📍 金蝉北路弯里中心2楼必胜客(华侨城店)向东80米
+                        </div>
+                        <div class="cafe-info">
+                            <div class="info-label">
+                                <span class="icon">🕐</span>营业时间
+                            </div>
+                            <div class="info-value">周一至周日 10:00-19:00</div>
+                        </div>
+                        <div class="cafe-advantages">
+                            <div class="advantages-title">✨ 推荐理由</div>
+                            <p>• 艺术氛围浓厚，环境优雅</p>
+                            <p>• 同弯里中心，停车便利</p>
+                            <p>• 适合文艺青年聚会</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cafe-card">
+                    <div class="cafe-header">
+                        <div class="cafe-name">ZOO COFFEE(山水文园店)</div>
+                        <div class="cafe-rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.5分</span>
+                        </div>
+                    </div>
+                    <div class="cafe-content">
+                        <div class="price-tag">💰 人均 56元</div>
+                        <div class="cafe-address">
+                            📍 弘燕东路山水米兰商业街A14-A15
+                        </div>
+                        <div class="cafe-info">
+                            <div class="info-label">
+                                <span class="icon">🕐</span>营业时间
+                            </div>
+                            <div class="info-value">周一至周日 09:30-20:00</div>
+                        </div>
+                        <div class="cafe-advantages">
+                            <div class="advantages-title">✨ 推荐理由</div>
+                            <p>• 动物主题咖啡厅，环境有趣</p>
+                            <p>• 商业街有停车位</p>
+                            <p>• 适合带孩子的家庭聚会</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cafe-card">
+                    <div class="cafe-header">
+                        <div class="cafe-name">瑞幸咖啡(焦奥中心1号楼店)</div>
+                        <div class="cafe-rating">
+                            <span class="stars">⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.2分</span>
+                        </div>
+                    </div>
+                    <div class="cafe-content">
+                        <div class="price-tag">💰 人均 22元</div>
+                        <div class="cafe-address">
+                            📍 化工路59号院焦奥中心B座一层101室
+                        </div>
+                        <div class="cafe-info">
+                            <div class="info-label">
+                                <span class="icon">🕐</span>营业时间
+                            </div>
+                            <div class="info-value">周日 07:30-18:00；周一至周五 07:00-19:30；周六 07:00-18:00</div>
+                        </div>
+                        <div class="cafe-advantages">
+                            <div class="advantages-title">✨ 推荐理由</div>
+                            <p>• 价格实惠，性价比高</p>
+                            <p>• 焦奥中心有停车场</p>
+                            <p>• 适合简单会面</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cafe-card">
+                    <div class="cafe-header">
+                        <div class="cafe-name">贝瑞咖啡(焦奥中心店)</div>
+                        <div class="cafe-rating">
+                            <span class="stars">⭐⭐⭐</span>
+                            <span class="rating-text">4.0分</span>
+                        </div>
+                    </div>
+                    <div class="cafe-content">
+                        <div class="price-tag">💰 人均 19元</div>
+                        <div class="cafe-address">
+                            📍 化工路59号北控科创园F1层
+                        </div>
+                        <div class="cafe-info">
+                            <div class="info-label">
+                                <span class="icon">🕐</span>营业时间
+                            </div>
+                            <div class="info-value">周一至周日 07:00-18:30</div>
+                        </div>
+                        <div class="cafe-advantages">
+                            <div class="advantages-title">✨ 推荐理由</div>
+                            <p>• 价格最便宜，适合简单会面</p>
+                            <p>• 科创园有停车位</p>
+                            <p>• 环境安静，适合商务洽谈</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="traffic-section">
+            <h3>🚗 交通建议</h3>
+            <div class="traffic-info">
+                <div class="traffic-card">
+                    <h4>🏢 从海淀区汇众大厦出发</h4>
+                    <p>• 建议走四环路，然后转东四环南路</p>
+                    <p>• 到弯里中心约需30-40分钟车程</p>
+                    <p>• 到焦奥中心约需35-45分钟车程</p>
+                </div>
+                <div class="traffic-card">
+                    <h4>🚇 从亦庄经海路地铁站出发</h4>
+                    <p>• 建议走东五环，然后转化工路</p>
+                    <p>• 到弯里中心约需25-35分钟车程</p>
+                    <p>• 到焦奥中心约需15-25分钟车程</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
